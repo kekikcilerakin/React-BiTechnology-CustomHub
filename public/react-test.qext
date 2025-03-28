@@ -1,0 +1,15 @@
+﻿{
+  "type": "mashup",
+  "name": "react-test",
+  "version": "0.1.0",
+  "description": "react-test",
+  "homepage": "",
+  "author": "AKN",
+  "keywords": "qlik-sense, mashup",
+  "license": "",
+  "repository": "",
+  "dependencies": {
+      "qlik-sense": ">=2.1.x"
+  },
+  "preview": "vite.svg"
+}
