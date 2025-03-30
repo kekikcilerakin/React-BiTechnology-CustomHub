@@ -15,17 +15,8 @@ import {
   Settings,
   Users,
   FileText,
-  User2,
-  ChevronUp,
 } from "lucide-react";
 import { useTheme } from "@/components/ThemeProvider";
-
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuItem,
-  DropdownMenuContent,
-} from "./ui/dropdown-menu";
 
 export default function AppSidebar() {
   const { theme } = useTheme();
