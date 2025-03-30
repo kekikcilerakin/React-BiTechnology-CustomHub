@@ -1,5 +1,7 @@
 const { protocol, hostname, port, pathname } = window.location;
-const url = `${protocol}//${hostname}:${port}`;
+const url = hostname === "localhost" 
+  ? `https://demo.bitechnology.com` 
+  : `${protocol}//${hostname}:${port}`;
 const xrfKey = "1234567890abcdef";
 
 type QlikConfig = {
@@ -20,7 +22,7 @@ const getQlikConfig = (): QlikConfig => {
   );
 
   return {
-    host: hostname,
+    host: hostname === "localhost" ? "demo.bitechnology.com" : hostname,
     prefix: prefix,
     port: port,
     isSecure: protocol === "https:",
@@ -34,7 +36,7 @@ const configureQlik = (): void => {
     ? `${config.prefix.replace(/\/$/, "")}/`
     : "";
   const baseUrl = `${config.isSecure ? "https://" : "http://"}${config.host}${config.port ? ":" + config.port : ""}${prefixPath}resources`;
-
+  
   (window as any).require?.config({
     baseUrl: baseUrl,
   });

@@ -15,7 +15,8 @@ export const getQlikApps = async (): Promise<any[]> => {
         const global = qlik.getGlobal(config);
 
         global.getAppList((list: any[]) => {
-          resolve(list);
+          const filteredApps = list.filter(app => app.qMeta && app.qMeta.stream !== null);
+          resolve(filteredApps);
         });
       },
       (error: any) => {
@@ -31,6 +32,6 @@ export const logQlikApps = async (): Promise<void> => {
     const apps = await getQlikApps();
     console.log("Apps:", apps);
   } catch (error) {
-    console.error("Failed to log apps:", error);
+    console.error("Failed to log apps.");
   }
 };

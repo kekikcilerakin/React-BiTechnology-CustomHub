@@ -24,7 +24,7 @@ const Header = () => {
         {!isUsernameLoading && (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="flex items-center gap-2">
+              <Button variant="ghost">
                 <User className="h-4 w-4" />
                 <span>{username}</span>
               </Button>
@@ -36,7 +36,7 @@ const Header = () => {
                 {theme === "dark" ? (
                   <div className="flex items-center gap-2">
                     <span>Light Theme</span>
-                    <Sun className="h-7 w-7" />
+                    <Sun />
                   </div>
                 ) : (
                   <div className="flex items-center gap-2">

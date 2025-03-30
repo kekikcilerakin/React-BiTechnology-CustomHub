@@ -32,6 +32,7 @@ export const getQlikStreams = async (): Promise<Stream[]> => {
       headers: {
         "X-Qlik-Xrfkey": xrfKey,
       },
+      credentials: "include",
     });
 
     if (!response.ok) {

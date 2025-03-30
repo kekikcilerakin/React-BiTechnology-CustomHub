@@ -8,7 +8,9 @@ type QlikUserResponse = {
 
 export const getQlikUser = async (): Promise<string> => {
   try {
-    const response = await fetch(`${url}/qps/user`);
+    const response = await fetch(`${url}/qps/user`, {
+      credentials: 'include',
+    });
 
     if (!response.ok) {
       throw new Error(
@@ -17,6 +19,7 @@ export const getQlikUser = async (): Promise<string> => {
     }
 
     const data: QlikUserResponse = await response.json();
+    
     return data.userName || "Unknown user";
   } catch (error) {
     console.error("Error fetching Qlik user:", error);
@@ -26,7 +29,12 @@ export const getQlikUser = async (): Promise<string> => {
 
 export const getFullQlikUser = async (): Promise<QlikUserResponse> => {
   try {
-    const response = await fetch(`${url}/qps/user`);
+    const response = await fetch(`${url}/qps/user`, {
+      credentials: 'include',
+      headers: {
+        'Accept': 'application/json',
+      },
+    });
 
     if (!response.ok) {
       throw new Error(
