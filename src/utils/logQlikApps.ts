@@ -6,7 +6,7 @@ const isQlikEnvironment = () => {
 
 export const logQlikApps = async (): Promise<void> => {
   configureQlik();
-  
+
   if (!isQlikEnvironment()) {
     console.error("Qlik environment not detected");
     return;

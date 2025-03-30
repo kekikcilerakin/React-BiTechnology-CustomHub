@@ -16,14 +16,14 @@ const Header = () => {
     <header className="flex h-16 items-center justify-between border-b px-6">
       <div className="flex items-center gap-2">
         <SidebarTrigger />
-        <h1 className="text-xl font-semibold">Dashboard</h1>
+        {/* <h1 className="text-xl font-poppins">Dashboard</h1> */}
       </div>
       <div className="flex items-center">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="flex items-center gap-2">
               <User className="h-4 w-4" />
-              <span>John Doe</span>
+              <span>username</span>
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
