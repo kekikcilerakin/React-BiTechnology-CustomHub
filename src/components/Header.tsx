@@ -11,7 +11,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 import { useQlikUser } from "@/hooks/useQlikUser";
 
 const Header = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, activeEventTheme } = useTheme();
   const { username, isUsernameLoading } = useQlikUser();
 
   return (
@@ -30,21 +30,34 @@ const Header = () => {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              >
-                {theme === "dark" ? (
-                  <div className="flex items-center gap-2">
-                    <span>Light Theme</span>
-                    <Sun />
+              {/* Display active event theme in dropdown menu */}
+              {activeEventTheme.theme && (
+                <DropdownMenuItem className="flex items-center gap-2 cursor-default" disabled>
+                  <div className="flex items-center gap-2 text-primary">
+                    <span className="font-medium">{activeEventTheme.displayName}</span>
+                    <div className="h-2 w-2 rounded-full bg-primary animate-pulse"></div>
                   </div>
-                ) : (
-                  <div className="flex items-center gap-2">
-                    <span>Dark Theme</span>
-                    <Moon />
-                  </div>
-                )}
-              </DropdownMenuItem>
+                </DropdownMenuItem>
+              )}
+              
+              {/* Only show theme toggle if no event theme is active */}
+              {!activeEventTheme.theme && (
+                <DropdownMenuItem
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                >
+                  {theme === "dark" ? (
+                    <div className="flex items-center gap-2">
+                      <span>Light Theme</span>
+                      <Sun />
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-2">
+                      <span>Dark Theme</span>
+                      <Moon />
+                    </div>
+                  )}
+                </DropdownMenuItem>
+              )}
               <DropdownMenuItem>Logout</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

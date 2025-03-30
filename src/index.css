@@ -18,6 +18,9 @@
 }
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant new-years (&:is(.new-years *));
+@custom-variant halloween (&:is(.halloween *));
+@custom-variant christmas (&:is(.christmas *));
 
 :root {
   --radius: 0.625rem;
@@ -86,6 +89,123 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+/* Halloween Theme */
+.halloween {
+  --background: oklch(0.11 0.04 30); /* Dark orange-black */
+  --foreground: oklch(0.9 0.07 60); /* Pale orange */
+  --card: oklch(0.17 0.065 25); /* Dark orange-brown */
+  --card-foreground: oklch(0.9 0.07 60); /* Pale orange */
+  --popover: oklch(0.17 0.065 25); /* Dark orange-brown */
+  --popover-foreground: oklch(0.9 0.07 60); /* Pale orange */
+  --primary: oklch(0.65 0.25 40); /* Vibrant orange */
+  --primary-foreground: oklch(0.07 0.05 30); /* Very dark orange-black */
+  --secondary: oklch(0.23 0.088 290); /* Deep purple */
+  --secondary-foreground: oklch(0.9 0.07 60); /* Pale orange */
+  --muted: oklch(0.23 0.088 290); /* Deep purple */
+  --muted-foreground: oklch(0.75 0.1 50); /* Muted orange */
+  --accent: oklch(0.4 0.18 110); /* Lime green (toxic/slime feel) */
+  --accent-foreground: oklch(0.9 0.07 60); /* Pale orange */
+  --destructive: oklch(0.5 0.28 15); /* Blood red */
+  --border: oklch(0.65 0.25 40 / 30%); /* Vibrant orange border */
+  --input: oklch(0.65 0.25 40 / 30%); /* Vibrant orange input */
+  --ring: oklch(0.65 0.25 40); /* Vibrant orange ring */
+
+  /* Chart colors - Halloween palette */
+  --chart-1: oklch(0.65 0.25 40); /* Orange */
+  --chart-2: oklch(0.23 0.088 290); /* Purple */
+  --chart-3: oklch(0.15 0.04 110); /* Dark green */
+  --chart-4: oklch(0.5 0.28 15); /* Blood red */
+  --chart-5: oklch(0.07 0.05 30); /* Almost black */
+
+  /* Sidebar */
+  --sidebar: oklch(0.07 0.05 30); /* Very dark orange-black */
+  --sidebar-foreground: oklch(0.65 0.25 40); /* Vibrant orange */
+  --sidebar-primary: oklch(0.5 0.28 15); /* Blood red */
+  --sidebar-primary-foreground: oklch(0.9 0.07 60); /* Pale orange */
+  --sidebar-accent: oklch(0.23 0.088 290); /* Deep purple */
+  --sidebar-accent-foreground: oklch(0.9 0.07 60); /* Pale orange */
+  --sidebar-border: oklch(0.65 0.25 40 / 30%); /* Vibrant orange border */
+  --sidebar-ring: oklch(0.65 0.25 40); /* Vibrant orange ring */
+}
+
+/* New Year's Theme */
+.new-years {
+  --background: oklch(0.1 0.01 260); /* Deep navy blue */
+  --foreground: oklch(0.95 0.03 100); /* Off-white */
+  --card: oklch(0.15 0.03 260); /* Slightly lighter navy */
+  --card-foreground: oklch(0.95 0.03 100); /* Off-white */
+  --popover: oklch(0.15 0.03 260); /* Slightly lighter navy */
+  --popover-foreground: oklch(0.95 0.03 100); /* Off-white */
+  --primary: oklch(0.8 0.12 110); /* Gold */
+  --primary-foreground: oklch(0.1 0.01 260); /* Deep navy blue */
+  --secondary: oklch(0.6 0.2 270); /* Purple */
+  --secondary-foreground: oklch(0.95 0.03 100); /* Off-white */
+  --muted: oklch(0.2 0.04 260); /* Muted navy */
+  --muted-foreground: oklch(0.8 0.05 100); /* Muted gold/silver */
+  --accent: oklch(0.7 0.14 290); /* Bright purple */
+  --accent-foreground: oklch(0.95 0.03 100); /* Off-white */
+  --destructive: oklch(0.6 0.25 25); /* Red */
+  --border: oklch(0.8 0.12 110 / 30%); /* Gold border */
+  --input: oklch(0.8 0.12 110 / 20%); /* Gold input */
+  --ring: oklch(0.8 0.12 110); /* Gold ring */
+
+  /* Chart colors - New Year's celebration palette */
+  --chart-1: oklch(0.8 0.12 110); /* Gold */
+  --chart-2: oklch(0.75 0.06 100); /* Silver */
+  --chart-3: oklch(0.7 0.14 290); /* Bright purple */
+  --chart-4: oklch(0.6 0.25 25); /* Red */
+  --chart-5: oklch(0.5 0.2 220); /* Blue */
+
+  /* Sidebar */
+  --sidebar: oklch(0.15 0.03 260); /* Slightly lighter navy */
+  --sidebar-foreground: oklch(0.8 0.12 110); /* Gold */
+  --sidebar-primary: oklch(0.7 0.14 290); /* Bright purple */
+  --sidebar-primary-foreground: oklch(0.95 0.03 100); /* Off-white */
+  --sidebar-accent: oklch(0.22 0.05 260); /* Accent navy */
+  --sidebar-accent-foreground: oklch(0.8 0.12 110); /* Gold */
+  --sidebar-border: oklch(0.8 0.12 110 / 30%); /* Gold border */
+  --sidebar-ring: oklch(0.8 0.12 110); /* Gold ring */
+}
+
+/* Christmas Theme */
+.christmas {
+  --background: oklch(0.98 0.005 120); /* Snow white with hint of green */
+  --foreground: oklch(0.2 0.05 140); /* Deep forest green */
+  --card: oklch(0.95 0.01 120); /* Slightly off-white */
+  --card-foreground: oklch(0.2 0.05 140); /* Deep forest green */
+  --popover: oklch(0.95 0.01 120); /* Slightly off-white */
+  --popover-foreground: oklch(0.2 0.05 140); /* Deep forest green */
+  --primary: oklch(0.53 0.28 25); /* Christmas red */
+  --primary-foreground: oklch(0.98 0.005 120); /* Snow white */
+  --secondary: oklch(0.35 0.12 140); /* Medium green */
+  --secondary-foreground: oklch(0.98 0.005 120); /* Snow white */
+  --muted: oklch(0.9 0.03 120); /* Light green-white */
+  --muted-foreground: oklch(0.4 0.07 140); /* Muted green */
+  --accent: oklch(0.8 0.1 80); /* Gold */
+  --accent-foreground: oklch(0.2 0.05 140); /* Deep forest green */
+  --destructive: oklch(0.53 0.28 25); /* Christmas red (reused) */
+  --border: oklch(0.35 0.12 140 / 20%); /* Medium green border */
+  --input: oklch(0.35 0.12 140 / 15%); /* Medium green input */
+  --ring: oklch(0.53 0.28 25); /* Christmas red ring */
+
+  /* Chart colors - Christmas palette */
+  --chart-1: oklch(0.53 0.28 25); /* Christmas red */
+  --chart-2: oklch(0.35 0.12 140); /* Medium green */
+  --chart-3: oklch(0.8 0.1 80); /* Gold */
+  --chart-4: oklch(0.25 0.05 250); /* Deep blue (like ornaments) */
+  --chart-5: oklch(0.6 0.05 140); /* Light green */
+
+  /* Sidebar */
+  --sidebar: oklch(0.25 0.08 140); /* Deep green sidebar */
+  --sidebar-foreground: oklch(0.98 0.005 120); /* Snow white */
+  --sidebar-primary: oklch(0.53 0.28 25); /* Christmas red */
+  --sidebar-primary-foreground: oklch(0.98 0.005 120); /* Snow white */
+  --sidebar-accent: oklch(0.3 0.1 140); /* Accent green */
+  --sidebar-accent-foreground: oklch(0.98 0.005 120); /* Snow white */
+  --sidebar-border: oklch(0.53 0.28 25 / 30%); /* Christmas red border */
+  --sidebar-ring: oklch(0.53 0.28 25); /* Christmas red ring */
 }
 
 @theme inline {
