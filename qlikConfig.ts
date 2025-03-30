@@ -1,3 +1,7 @@
+const { protocol, hostname, port, pathname } = window.location;
+const url = `${protocol}//${hostname}:${port}`;
+const xrfKey = "1234567890abcdef";
+
 type QlikConfig = {
   host: string;
   prefix: string;
@@ -5,23 +9,30 @@ type QlikConfig = {
   isSecure: boolean;
 };
 
+const isQlikEnvironment = (): boolean => {
+  return typeof window !== "undefined" && typeof window.require === "function";
+};
+
 const getQlikConfig = (): QlikConfig => {
-  const prefix = window.location.pathname.substr(
+  const prefix = pathname.substring(
     0,
-    window.location.pathname.toLowerCase().lastIndexOf("/extensions") + 1,
+    pathname.toLowerCase().lastIndexOf("/extensions") + 1,
   );
+
   return {
-    host: window.location.hostname,
+    host: hostname,
     prefix: prefix,
-    port: window.location.port,
-    isSecure: window.location.protocol === "https:",
+    port: port,
+    isSecure: protocol === "https:",
   };
 };
 
 const configureQlik = (): void => {
   const config = getQlikConfig();
-  
-  const prefixPath = config.prefix ? `${config.prefix.replace(/\/$/, '')}/` : '';
+
+  const prefixPath = config.prefix
+    ? `${config.prefix.replace(/\/$/, "")}/`
+    : "";
   const baseUrl = `${config.isSecure ? "https://" : "http://"}${config.host}${config.port ? ":" + config.port : ""}${prefixPath}resources`;
 
   (window as any).require?.config({
@@ -29,4 +40,4 @@ const configureQlik = (): void => {
   });
 };
 
-export { configureQlik, getQlikConfig };
+export { url, xrfKey, isQlikEnvironment, getQlikConfig, configureQlik };
