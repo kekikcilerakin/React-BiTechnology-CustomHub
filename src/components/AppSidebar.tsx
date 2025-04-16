@@ -10,12 +10,7 @@ import {
   SidebarGroupLabel,
   SidebarFooter,
 } from "@/components/ui/sidebar";
-import {
-  Home,
-  Settings,
-  Users,
-  FileText,
-} from "lucide-react";
+import { Home, Settings, Users, FileText } from "lucide-react";
 import { useTheme } from "@/components/ThemeProvider";
 
 export default function AppSidebar() {
@@ -25,7 +20,11 @@ export default function AppSidebar() {
     <Sidebar>
       <SidebarHeader className="p-8">
         <img
-          src={theme === "dark" ? "/logo-dark.png" : "/logo-light.png"}
+          src={
+            theme === "dark"
+              ? `${import.meta.env.BASE_URL}assets/img/logo-dark.png`
+              : `${import.meta.env.BASE_URL}assets/img/logo-light.png`
+          }
           alt="Logo"
         />
       </SidebarHeader>
